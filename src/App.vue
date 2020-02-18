@@ -128,8 +128,6 @@ export default {
 
       this.set_db(db);
     }
-
-    console.log(location.pathname);
   }
 };
 </script>
@@ -138,5 +136,42 @@ export default {
 .container {
   height: calc(100% - 24px);
   max-width: 98% !important;
+}
+.loading-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 203;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.improved-td {
+	width: 50px !important;
+	height: 50px !important;
+	padding: 0 !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	padding-top: 5px !important;
+	padding-left: 5px !important;
+}
+.improved-th {
+  width: 50px !important;
+}
+td {
+  border-bottom: none !important;
+}
+tr {
+  border-bottom: solid rgba(0, 0, 0, 0.54) 1px;
+}
+
+.hade-enter-active, .hade-leave-active {
+  transition: all 300ms;
+}
+.hade-enter, .hade-leave-to {
+  opacity: 0;
 }
 </style>

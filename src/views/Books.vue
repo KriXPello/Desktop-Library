@@ -22,13 +22,16 @@
 						></v-text-field>
 						<v-spacer></v-spacer>
 						<div class="mr-3">
-							<v-menu v-model="menu" left :disabled="selected.length == 0">
+							<v-menu v-model="menu" left>
 								<template v-slot:activator="{ on }">
 									<v-btn text v-on="on" :disabled="selected.length == 0">
 										<v-icon>mdi-chevron-down</v-icon>
 									</v-btn>
 								</template>
-								<v-btn class="error" @click="delete_textbooks()">Удалить</v-btn>
+								<v-btn
+									class="error"
+									@click="delete_textbooks()"
+								>Удалить</v-btn>
 							</v-menu>	
 						</div>
 						<TextBookInsert @done="update_data()" />
@@ -49,7 +52,7 @@
 					<table class="table" cellspacing="0">
 						<thead align="left">
 							<tr>
-								<th style="width: 50px;"></th>
+								<th class="improved-th"></th>
 								<th class="t-name">Название учебника</th>
 								<th style="width: 70px">Класс</th>
 								<th class="t-name">Автор</th>
@@ -61,12 +64,11 @@
 						</thead>
 						<tbody>
 							<tr v-for="(textbook, i) in searched_textbooks" :key="i">
-								<td style="width: 50px">
+								<td class="improved-td">
 									<v-checkbox
-										class="ml-2"
 										v-model="selected"
 										:value="textbook"
-										height="5"
+										height="0"
 										:key="textbook.number"
 									></v-checkbox>
 								</td>
@@ -120,7 +122,7 @@
 						<table class="table" cellspacing="0">
 							<thead align="left">
 								<tr>
-									<th style="width: 50px"></th>
+									<th class="improved-th"></th>
 									<th class="t2-name">Название книги</th>
 									<th class="t2-name">Автор</th>
 									<th style="width: 105px">№ книги</th>
@@ -131,16 +133,15 @@
 							</thead>
 							<tbody>
 								<tr v-for="(book, i) in searched_books" :key="i">
-									<th style="width: 50px;">
+									<td class="improved-td">
 										<v-checkbox
-											class="ml-2"
 											v-model="selected_books"
 											:value="book"
 											:disabled="! +book.there"
 											height="0"
 											:key="book.number"
 										></v-checkbox>
-									</th>
+									</td>
 									<td>
 										<v-tooltip bottom>
 											<template v-slot:activator="{ on }">

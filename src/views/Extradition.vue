@@ -22,7 +22,7 @@
       <table class="table" cellspacing="0">
         <thead align="left">
           <tr>
-            <th style="width: 50px;"></th>
+            <th class="improved-th"></th>
             <th class="t-name">ФИО</th>
             <th style="width: 110px;">Дата выдачи</th>
             <th class="t-name">Название книги</th>
@@ -32,13 +32,12 @@
         </thead>
         <tbody>
           <tr v-for="(item, i) in searched" :key="i">
-            <td style="width: 50px;">
+            <td class="improved-td">
               <v-checkbox
-                class="ml-2"
                 v-model="selected"
                 :value="item"
-                height="5"
-                :key="item.id"
+                height="0"
+                :key="item.number"
                 :disabled="disabled(item.reader_id) || item.status == '0'"
               ></v-checkbox>
             </td>

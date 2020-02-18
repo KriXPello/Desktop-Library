@@ -77,7 +77,7 @@
 											label="Автор"
 											:value="item.author"
 											rows="2"
-											row-height="25"
+											height="50"
 											readonly
 											no-resize
 										></v-textarea>
@@ -98,7 +98,7 @@
 										></v-text-field>
 									</v-col>
 								</v-row>
-								<v-row align="center">
+								<v-row align="center" >
 									<v-col class="mt-8">
 										<v-btn
 											text

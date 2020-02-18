@@ -77,7 +77,7 @@
 												label="Автор"
 												:value="item.author"
 												rows="2"
-												row-height="25"
+												height="50"
 												readonly
 												no-resize
 											></v-textarea>
